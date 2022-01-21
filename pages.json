@@ -1,0 +1,104 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// tabbar页面
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "外卖猫"
+			}
+		},
+		{
+			"path": "pages/order/index",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
+		{
+			"path": "pages/profile/index",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				// 下拉刷新
+				"enablePullDownRefresh": false
+			}
+		},
+		// 单页面
+		{
+			"path": "pages/profile/web/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/profile/web/address",
+			"style": {
+				"navigationBarTitleText": "收货信息"
+			}
+		},
+		{
+			"path": "pages/profile/web/comment",
+			"style": {
+				"navigationBarTitleText": "我的评价"
+			}
+		},
+		{
+			"path": "pages/profile/web/feedback",
+			"style": {
+				"navigationBarTitleText": "客服中心"
+			}
+		},
+		{
+			"path": "pages/profile/web/help",
+			"style": {
+				"navigationBarTitleText": "帮助中心"
+			}
+		},
+		{
+			"path": "pages/profile/web/editAddress",
+			"style": {
+				"navigationBarTitleText": "编辑收货地址"
+			}
+		},
+		{
+			"path": "pages/index/web/opList",
+			"style": {
+				"navigationBarTitleText": "店铺分类"
+			}
+		},
+		{
+			"path": "pages/shop/index",
+			"style": {
+				"navigationBarTitleText": "店铺"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "外卖猫",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"selectedColor": "#DD524D",
+		"list": [{
+				"text": "首页",
+				"pagePath": "pages/index/index",
+				"iconPath": "static/img/tabbar/home.png",
+				"selectedIconPath": "static/img/tabbar/home-active.png"
+
+			},
+			{
+				"text": "订单",
+				"pagePath": "pages/order/index",
+				"iconPath": "static/img/tabbar/cart.png",
+				"selectedIconPath": "static/img/tabbar/cart-active.png"
+
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/profile/index",
+				"iconPath": "static/img/tabbar/member.png",
+				"selectedIconPath": "static/img/tabbar/member-active.png"
+			}
+		]
+	}
+}
