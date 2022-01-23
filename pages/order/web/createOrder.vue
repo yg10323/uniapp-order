@@ -203,10 +203,12 @@
 					for (let item of this.orderData) {
 						food_ids.push(item.data.id)
 					}
-					// 订单金额大于20时随机减0-10
+					// 订单金额大于20时随机减0-5
 					let pay_price;
 					if (this.totalPrice.toFixed(2) > 20) {
 						pay_price = this.totalPrice - Math.random() * 10
+					} else {
+						pay_price = this.totalPrice
 					}
 					this.postData = {
 						food_info: [{
@@ -217,7 +219,7 @@
 						pay_price: pay_price.toFixed(2),
 					}
 					uni.navigateTo({
-						url:`/pages/order/web/payment?data=${encodeURIComponent(JSON.stringify(this.postData))}`
+						url: `/pages/order/web/payment?data=${encodeURIComponent(JSON.stringify(this.postData))}`
 					})
 				}
 			},

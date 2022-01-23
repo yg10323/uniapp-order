@@ -34,10 +34,29 @@
 		},
 		methods: {
 			purchase() {
-				console.log('提交数据')
-				
+				this.$api.frontApis.purchase({
+						data: this.postData
+					})
+					.then(res => {
+						uni.showToast({
+							title: res.message
+						})
+					})
 				// 提交数据后, 删除缓存的订单中的购物车数据
-			}
+				const shop_ids = []
+				for (let item of this.postData.food_info) {
+					shop_ids.push(item.shop_id)
+				}
+				this.updateShopCart(shop_ids)
+				// 1s后跳转到我的订单页面(tabbar页面)
+				setTimeout(() => {
+					uni.switchTab({
+						url: '/pages/order/index'
+					})
+				}, 1000)
+			},
+
+			...mapMutations(['updateShopCart'])
 		}
 	}
 </script>
