@@ -9875,20 +9875,22 @@ var render = function() {
             "v-uni-view",
             { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
             [
-              _c(
-                "v-uni-view",
-                { attrs: { _i: 3 } },
-                [
-                  _vm._v("您是我们的优质客户, 已为您随机折扣"),
-                  _c(
-                    "v-uni-text",
-                    { staticStyle: { color: "red" }, attrs: { _i: 4 } },
-                    [_vm._v("￥" + _vm._$g(4, "t0-0"))]
-                  ),
-                  _vm._v("元")
-                ],
-                1
-              ),
+              _vm._$g(3, "i")
+                ? _c(
+                    "v-uni-view",
+                    { attrs: { _i: 3 } },
+                    [
+                      _vm._v("您是我们的优质客户, 已为您随机折扣"),
+                      _c(
+                        "v-uni-text",
+                        { staticStyle: { color: "red" }, attrs: { _i: 4 } },
+                        [_vm._v("￥" + _vm._$g(4, "t0-0"))]
+                      ),
+                      _vm._v("元")
+                    ],
+                    1
+                  )
+                : _vm._e(),
               _c("v-uni-text", { attrs: { _i: 5 } }, [
                 _vm._v("原总金额￥" + _vm._$g(5, "t0-0") + "元")
               ]),

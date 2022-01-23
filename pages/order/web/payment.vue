@@ -2,8 +2,10 @@
 	<view class="payment">
 		<view class="payment-top">
 			<view class="top-upper">
-				<view>您是我们的优质客户, 已为您随机折扣<text
-						style="color: red;">￥{{(postData.taotal_price - postData.pay_price).toFixed(2)}}</text>元</view>
+				<view v-if="postData.taotal_price - postData.pay_price">
+					您是我们的优质客户, 已为您随机折扣
+					<text style="color: red;">￥{{(postData.taotal_price - postData.pay_price).toFixed(2)}}</text>元
+				</view>
 				<text>原总金额￥{{postData.taotal_price}}元</text>
 				<text>现总金额￥{{postData.pay_price}}元</text>
 			</view>
