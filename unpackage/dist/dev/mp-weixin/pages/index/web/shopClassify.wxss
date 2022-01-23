@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.shop-classify.data-v-2c8740cb {
+  text-align: center;
+}
+.shop-classify-list.data-v-2c8740cb {
+  padding: 20px 10px;
+}
+.shop-classify-list .col-item.data-v-2c8740cb {
+  margin-bottom: 10px;
+}
+.shop-classify-list .col-item .classify-text.data-v-2c8740cb {
+  font-size: 14px;
+}
+

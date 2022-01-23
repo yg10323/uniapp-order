@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.info-item.data-v-8e93fe00 {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.info-item .label.data-v-8e93fe00 {
+  margin-right: 15px;
+}
+.btn.data-v-8e93fe00 {
+  margin: 20px;
+}
+

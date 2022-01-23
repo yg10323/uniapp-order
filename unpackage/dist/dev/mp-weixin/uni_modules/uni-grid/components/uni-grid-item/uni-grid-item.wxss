@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.uni-grid-item {
+  height: 100%;
+  display: flex;
+}
+.uni-grid-item__box {
+  display: flex;
+  width: 100%;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+}
+.uni-grid-item--border {
+  position: relative;
+  z-index: 0;
+  border-bottom: 1px #D2D2D2 solid;
+  border-right: 1px #D2D2D2 solid;
+}
+.uni-grid-item--border-top {
+  position: relative;
+  border-top: 1px #D2D2D2 solid;
+  z-index: 0;
+}
+.uni-highlight:active {
+  background-color: #f1f1f1;
+}
+

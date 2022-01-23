@@ -21,7 +21,9 @@
 						<view class="other-info-sold other-info-item">月售{{child.sold}}</view>
 						<view class="other-info-price other-info-item">
 							<view class="left">￥<text>{{child.price}}</text></view>
-							<view class="right" @click="addCount(child)">+</view>
+							<view class="right">
+								<view class="add" @click="addCount(child)">+</view>
+							</view>
 						</view>
 					</view>
 				</view>
@@ -32,6 +34,11 @@
 </template>
 
 <script>
+	import {
+		mapMutations,
+		mapState
+	} from 'vuex'
+
 	export default {
 		props: {
 			shop_id: {
@@ -39,6 +46,7 @@
 				required: true
 			}
 		},
+		computed: mapState(['shopCart']),
 		created() {
 			this.getShopFood()
 		},
@@ -47,7 +55,7 @@
 				foodInfo: "",
 				menuIndex: 0,
 				prevIndex: 0, //前一个被激活的菜单项
-				nemuList: []
+				nemuList: [],
 			}
 		},
 		methods: {
@@ -66,7 +74,7 @@
 							}
 
 							// ------------------------------------------------------------------
-							console.log(this.foodInfo)
+							// console.log(this.foodInfo)
 						}
 					})
 			},
@@ -83,8 +91,31 @@
 				}
 			},
 			addCount(data) {
-				console.log(data)
+				const food = {
+					name: data.name,
+					data: data,
+					count: 1
+				}
+
+				const cartInfo = this.shopCart[this.shop_id]
+
+				for (let i in cartInfo || []) {
+					if (food.name === cartInfo[i].name) {
+						this.changeCount({
+							shop_id: this.shop_id,
+							name: food.name,
+							method: "increase"
+						})
+						// 如果存在该食品, 只将count加1
+						return
+					}
+				}
+				// 否则就新添加一个
+				this.setShopCart(food)
 			},
+
+
+			...mapMutations(['setShopCart', 'changeCount'])
 		}
 	}
 </script>
@@ -100,7 +131,7 @@
 
 	.left-menu {
 		width: 100px;
-		height: 53vh;
+		height: 60vh;
 		// margin-right: 15px;
 		text-align: center;
 		overflow-x: hidden;
@@ -108,7 +139,7 @@
 		background-color: #f6f6f6;
 
 		&-option {
-			padding: 10px 2px;
+			padding: 15px 2px;
 			// 一行显示,超出文字显示省略号
 			white-space: nowrap;
 			overflow: hidden;
@@ -129,7 +160,7 @@
 
 	.right-content {
 		flex: 1;
-		height: 53vh;
+		height: 60vh;
 		overflow-x: hidden;
 		overflow-y: scroll;
 	}
@@ -188,14 +219,17 @@
 				position: absolute;
 				right: 10px;
 				bottom: 0;
-				width: 20px;
-				height: 20px;
-				line-height: 20px;
 				text-align: center;
-				font-size: 20px;
-				font-weight: 700;
-				background-color: #f3a73f;
-				border-radius: 5px;
+
+				.add {
+					width: 20px;
+					height: 20px;
+					line-height: 20px;
+					font-size: 20px;
+					font-weight: 700;
+					background-color: #f3a73f;
+					border-radius: 5px;
+				}
 			}
 		}
 	}

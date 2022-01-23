@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.uni-forms-item {
+  position: relative;
+  padding: 0px;
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+}
+.uni-forms-item__box {
+  position: relative;
+}
+.uni-forms-item__inner {
+  display: flex;
+  padding-bottom: 22px;
+}
+.is-direction-left {
+  flex-direction: row;
+}
+.is-direction-top {
+  flex-direction: column;
+}
+.uni-forms-item__label {
+  display: flex;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  width: 65px;
+  padding: 5px 0;
+  height: 36px;
+}
+.uni-forms-item__label .label-text {
+  font-size: 13px;
+  color: #666666;
+}
+.uni-forms-item__label .label-seat {
+  margin-right: 5px;
+}
+.uni-forms-item__content {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 36px;
+  flex: 1;
+}
+.label-icon {
+  margin-right: 5px;
+  margin-top: -1px;
+}
+.is-required {
+  color: #dd524d;
+  font-weight: bold;
+}
+.uni-error-message {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  text-align: left;
+}
+.uni-error-message-text {
+  line-height: 22px;
+  color: #dd524d;
+  font-size: 12px;
+}
+.uni-error-msg--boeder {
+  position: relative;
+  bottom: 0;
+  line-height: 22px;
+}
+.is-input-error-border {
+  border-color: #dd524d;
+}
+.uni-forms-item--border {
+  margin-bottom: 0;
+  padding: 10px 0;
+  border-top: 1px #eee solid;
+}
+.uni-forms-item--border .uni-forms-item__inner {
+  padding: 0;
+}
+.is-first-border {
+  border: none;
+}
+.uni-forms--no-padding {
+  padding: 0;
+}
+

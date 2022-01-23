@@ -5,7 +5,6 @@
 </template>
 
 <script>
-	import ui from '../../../plugins/uni-ui/index.js'
 
 	export default {
 		components: {

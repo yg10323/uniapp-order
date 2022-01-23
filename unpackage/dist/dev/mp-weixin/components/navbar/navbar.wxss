@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.navbar.data-v-3f9c1e44 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+input.data-v-3f9c1e44 {
+  background-color: #f8f8f8;
+  padding: 5px;
+  border-radius: 8px;
+}
+

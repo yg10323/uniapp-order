@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.shop-list-content .shop-item.data-v-18a018e0 {
+  display: flex;
+  padding: 0 10px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.shop-list-content .shop-item-desc.data-v-18a018e0 {
+  width: 100%;
+  margin: 10px;
+}
+.shop-list-content .shop-item-desc .title.data-v-18a018e0,
+.shop-list-content .shop-item-desc .delivery.data-v-18a018e0,
+.shop-list-content .shop-item-desc .service.data-v-18a018e0 {
+  margin-bottom: 10px;
+}
+.shop-list-content .shop-item-desc .title.data-v-18a018e0 {
+  font-size: 18px;
+}
+.shop-list-content .shop-item-desc .delivery.data-v-18a018e0 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #37a2ee;
+}
+.shop-list-content .service .tag.data-v-18a018e0 {
+  margin-right: 3px;
+}
+

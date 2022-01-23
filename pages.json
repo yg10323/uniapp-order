@@ -69,6 +69,12 @@
 			"style": {
 				"navigationBarTitleText": "店铺"
 			}
+		},
+		{
+			"path": "pages/order/web/payment",
+			"style": {
+				"navigationBarTitleText": "订单付款"
+			}
 		}
 	],
 	"globalStyle": {

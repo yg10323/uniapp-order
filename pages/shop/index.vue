@@ -41,37 +41,48 @@
 			</view>
 		</view>
 
-		<view class="shop-footer">
-			<shop-cart></shop-cart>
+		<view class="shop-footer" v-if="showFooter">
+			<shop-cart :cartData="{shop_id:shopInfo.id,foodData:shopCart[shopInfo.id]}" @showFoodInfo="showFoodInfo"
+				@handlePayment="handlePayment"></shop-cart>
+		</view>
+
+		<view class="food-info-wrap">
+			<uni-popup ref="foodInfoWrap" type="bottom"  @maskClick="showFoodInfo" >
+				<food-info :shop_id="shopInfo.id"></food-info>
+			</uni-popup>
 		</view>
 	</view>
 </template>
 
 <script>
-	// import ui from '../../plugins/uni-ui/index.js'
 	import foodList from './web/foodList.vue'
 	import comment from './web/comment.vue'
 	import shopCart from '../../components/shopcart/shopCart.vue'
+	import foodInfo from './web/foodInfo.vue'
+	import {
+		mapState
+	} from 'vuex'
 
 	export default {
 		onLoad(option) {
 			const shopInfo = JSON.parse(decodeURIComponent(option.shopInfo))
 			this.shopInfo = shopInfo
-			console.log(this.shopInfo)
+			// console.log(this.shopInfo)
 		},
 		components: {
-			// uniNoticeBar: ui.uniNoticeBar,
-			// uniIcons: ui.uniIcons,
-			// uniSegmentedControl: ui.uniSegmentedControl,
 			foodList,
 			comment,
-			shopCart
+			shopCart,
+			foodInfo
 		},
+		computed: mapState(['shopCart']),
 		data() {
 			return {
 				shopInfo: "",
 				current: 0,
-				items: ['点餐', '评价']
+				items: ['点餐', '评价'],
+				showFoodInfoPopup: false,
+				showFooter: true
 			}
 		},
 		methods: {
@@ -80,26 +91,44 @@
 					service: eval(service),
 				};
 			},
+			// 切换tab栏
 			handleSegmented(e) {
 				this.current = e.currentIndex
+				// 切换tab栏,隐藏footer
+				if(this.current!==0) this.showFooter = false
+				else this.showFooter = true
+				
 			},
 			handleUniPopup() {
 				// this.$refs.popup.open()
 			},
+			// 控制底部popup显示隐藏
+			showFoodInfo() {
+				if(this.showFoodInfoPopup ){
+					this.$refs.foodInfoWrap.close()
+				}else {
+					this.$refs.foodInfoWrap.open()
+				}
+				this.showFoodInfoPopup = !this.showFoodInfoPopup
+			},
+			// 跳转订单付款页面
+			handlePayment() {
+				if(this.shopCart[this.shopInfo.id].length){
+					uni.navigateTo({
+						url:`/pages/order/web/payment?shop_id=${this.shopInfo.id}`
+					})
+				}
+			}
 		}
 	}
 </script>
 
 <style scoped lang="scss">
 	.shop {
-		// height: 100vh;
-		// overflow: hidden;
+		position: relative;
 	}
 
 	.shop-upper {
-		height: 25vh;
-		// background-color: red;
-
 		&-bg {
 			image {
 				filter: blur(5px);
@@ -148,20 +177,25 @@
 	}
 
 	.shop-content {
-		height: 60vh;
 		margin-top: 10px;
 	}
 
 	.shop-footer {
-		// height: 65px;
-		// height: calc(100vh - 60vh - 25vh - 44px);
-		// background-color: yellow;
-
 		position: fixed;
-		bottom: 0;
 		left: 0;
 		right: 0;
+		bottom: 0;
 		z-index: 99;
+	}
 
+	.uni-popup {
+		z-index: 1;
+		position: relative;
+	}
+
+	/deep/ .uni-popup__wrapper {
+		position: relative;
+		bottom: 50px;
+		background-color: #fff;
 	}
 </style>

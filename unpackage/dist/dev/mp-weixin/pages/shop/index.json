@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "店铺",
+  "usingComponents": {
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "uni-notice-bar": "/uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar",
+    "uni-segmented-control": "/uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control",
+    "food-list": "/pages/shop/web/foodList",
+    "comment": "/pages/shop/web/comment",
+    "shop-cart": "/components/shopcart/shopCart"
+  }
+}

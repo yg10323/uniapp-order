@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.login.data-v-2b2020df {
+  padding: 10px;
+}
+.btn.data-v-2b2020df {
+  margin-bottom: 10px;
+}
+

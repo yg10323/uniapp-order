@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.uni-grid-wrap {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.uni-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.uni-grid--border {
+  position: relative;
+  z-index: 1;
+  border-left: 1px #D2D2D2 solid;
+}
+

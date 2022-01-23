@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "外卖猫",
+  "usingComponents": {
+    "navbar": "/components/navbar/navbar",
+    "shop-classify": "/pages/index/web/shopClassify",
+    "shop-list": "/pages/index/web/shopList"
+  }
+}

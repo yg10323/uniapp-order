@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.shop-cart.data-v-15a6e6e4 {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100px;
+  background-color: red;
+  border-radius: 50%;
+}
+.left.data-v-15a6e6e4 {
+  display: flex;
+  width: 50%;
+  background-color: yellow;
+}
+

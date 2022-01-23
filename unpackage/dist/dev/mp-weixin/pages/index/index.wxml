@@ -1,0 +1,1 @@
+<view class="index"><navbar vue-id="8dd740cc-1" bind:__l="__l"></navbar><view class="content"><shop-classify vue-id="8dd740cc-2" classifyList="{{classifyList}}" bind:__l="__l"></shop-classify><shop-list vue-id="8dd740cc-3" shopList="{{shopList}}" bind:__l="__l"></shop-list></view></view>

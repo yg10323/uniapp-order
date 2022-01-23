@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "店铺分类",
+  "usingComponents": {
+    "uni-tag": "/uni_modules/uni-tag/components/uni-tag/uni-tag"
+  }
+}

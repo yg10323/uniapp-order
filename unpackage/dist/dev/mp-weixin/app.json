@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/index",
+    "pages/profile/index",
+    "pages/profile/web/login",
+    "pages/profile/web/address",
+    "pages/profile/web/comment",
+    "pages/profile/web/feedback",
+    "pages/profile/web/help",
+    "pages/profile/web/editAddress",
+    "pages/index/web/opList",
+    "pages/shop/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "外卖猫",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#DD524D",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/img/tabbar/home.png",
+        "selectedIconPath": "static/img/tabbar/home-active.png"
+      },
+      {
+        "text": "订单",
+        "pagePath": "pages/order/index",
+        "iconPath": "static/img/tabbar/cart.png",
+        "selectedIconPath": "static/img/tabbar/cart-active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/profile/index",
+        "iconPath": "static/img/tabbar/member.png",
+        "selectedIconPath": "static/img/tabbar/member-active.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

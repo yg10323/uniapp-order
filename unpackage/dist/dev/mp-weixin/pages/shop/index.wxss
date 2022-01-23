@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.shop.data-v-160b8d32 {
+  position: relative;
+}
+.shop-upper-bg image.data-v-160b8d32 {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  width: 100%;
+  height: 60px;
+}
+.shop-upper-intro.data-v-160b8d32 {
+  text-align: center;
+}
+.shop-upper-intro .shop-avatar image.data-v-160b8d32 {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.shop-upper-intro .shop-info.data-v-160b8d32 {
+  margin-top: 20px;
+}
+.shop-upper-intro .shop-info .shop-name.data-v-160b8d32 {
+  font-size: 18px;
+  font-weight: 700;
+}
+.shop-upper-intro .shop-notice.data-v-160b8d32 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.shop-upper-intro .shop-notice .icon.data-v-160b8d32 {
+  height: 40px;
+  width: 36px;
+  line-height: 36px;
+}
+.shop-content.data-v-160b8d32 {
+  margin-top: 10px;
+}
+.shop-footer.data-v-160b8d32 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
