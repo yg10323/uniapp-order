@@ -6,7 +6,7 @@
 				<image src="../../static/img/shopcart/active.png" v-if="totalPrice"></image>
 			</view>
 			<view class="text">
-				合计: {{totalPrice}}元
+				合计: {{totalPrice.toFixed(2)}}元
 			</view>
 		</view>
 

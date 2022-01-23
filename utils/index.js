@@ -1,5 +1,31 @@
 export default {
-
+	/**
+	 * 格式化时间
+	 * @param {*} timestamp 
+	 * @returns 年-月-日 时:分:秒
+	 */
+	formatTime(timestamp) {
+		const d = new Date(parseInt(timestamp)); //根据时间戳生成的时间对象
+		const date = (d.getFullYear()) + "-" +
+			(d.getMonth() + 1) + "-" +
+			(d.getDate()) + " " +
+			(d.getHours()) + ":" +
+			(d.getMinutes()) + ":" +
+			(d.getSeconds());
+		return date;
+	},
+	/**
+	 * 格式化时间
+	 * @param {*} timestamp 
+	 * @returns 时:分
+	 */
+	formatHour(timestamp) {
+		const d = new Date(parseInt(timestamp)); //根据时间戳生成的时间对象
+		const date =
+			(d.getHours()) + ":" +
+			(d.getMinutes())
+		return date;
+	},
 	/**
 	 * 对象递归删除空数据, 返回新对象
 	 * @param {any} data

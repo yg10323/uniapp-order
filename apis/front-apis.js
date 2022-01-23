@@ -14,6 +14,11 @@ export default {
         url: '/front/shop/food',
         method: 'POST'
     },
+		getShopByOpId:{
+			name:'根据一级分类获取全部店铺',
+			url:'/front/shop/all/op_id',
+			method:'POST'
+		},
     login: {
         name: '登录',
         url: '/buyer/login',
@@ -24,14 +29,15 @@ export default {
         url: '/buyer/register',
         method: 'POST'
     },
+		purchase: {
+			name: '创建订单',
+			url: '/buyer/purchase',
+			method: 'POST'
+		},
 		updateAddress: {
 				name:'更新收货信息',
 				url:'/buyer/update/address',
 				method:'POST'
 		},
-		getShopByOpId:{
-			name:'根据一级分类获取全部店铺',
-			url:'/front/shop/all/op_id',
-			method:'POST'
-		}
+
 }

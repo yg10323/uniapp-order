@@ -129,7 +129,14 @@
 		}
 		
 		.service {
+
 			.tag {
+				/*1. 先强制一行内显示文本*/
+				white-space: nowrap;
+				/*2. 超出的部分隐藏*/
+				overflow: hidden;
+				/*3. 文字用省略号替代超出的部分*/
+				text-overflow: ellipsis;
 				margin-right: 3px;
 			}
 		}

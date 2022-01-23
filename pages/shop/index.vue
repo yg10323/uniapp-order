@@ -47,7 +47,7 @@
 		</view>
 
 		<view class="food-info-wrap">
-			<uni-popup ref="foodInfoWrap" type="bottom"  @maskClick="showFoodInfo" >
+			<uni-popup ref="foodInfoWrap" type="bottom" @maskClick="showFoodInfo">
 				<food-info :shop_id="shopInfo.id"></food-info>
 			</uni-popup>
 		</view>
@@ -95,27 +95,29 @@
 			handleSegmented(e) {
 				this.current = e.currentIndex
 				// 切换tab栏,隐藏footer
-				if(this.current!==0) this.showFooter = false
+				if (this.current !== 0) this.showFooter = false
 				else this.showFooter = true
-				
 			},
 			handleUniPopup() {
 				// this.$refs.popup.open()
 			},
 			// 控制底部popup显示隐藏
 			showFoodInfo() {
-				if(this.showFoodInfoPopup ){
+				if (this.showFoodInfoPopup) {
 					this.$refs.foodInfoWrap.close()
-				}else {
+				} else {
 					this.$refs.foodInfoWrap.open()
 				}
 				this.showFoodInfoPopup = !this.showFoodInfoPopup
 			},
-			// 跳转订单付款页面
+			// 跳转创建订单页面
 			handlePayment() {
-				if(this.shopCart[this.shopInfo.id].length){
+				// 没有将某店铺食品添加购物车却点击结算时直接返回
+				if(this.shopCart[this.shopInfo.id] == undefined) return 
+				// 购物车有数据才结算
+				if (this.shopCart[this.shopInfo.id].length) {
 					uni.navigateTo({
-						url:`/pages/order/web/payment?shop_id=${this.shopInfo.id}`
+						url: `/pages/order/web/createOrder?shopInfo=${encodeURIComponent(JSON.stringify(this.shopInfo))}`
 					})
 				}
 			}

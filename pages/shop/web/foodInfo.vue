@@ -15,7 +15,7 @@
 						</view>
 						<view class="text-center">
 							<text class="extra">打包费: {{item.data.extra}}</text>
-							<text class="discount">折扣: {{item.data.discount}}</text>
+							<text class="discount" v-if="item.data.discount">折扣: {{item.data.discount.toFixed(2)}}</text>
 						</view>
 						<view class="text-lower">
 							<text>￥</text>

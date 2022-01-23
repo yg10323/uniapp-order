@@ -71,9 +71,15 @@
 			}
 		},
 		{
+			"path": "pages/order/web/createOrder",
+			"style": {
+				"navigationBarTitleText": "创建订单"
+			}
+		},
+		{
 			"path": "pages/order/web/payment",
 			"style": {
-				"navigationBarTitleText": "订单付款"
+				"navigationBarTitleText": "付款"
 			}
 		}
 	],
