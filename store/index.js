@@ -58,6 +58,10 @@ const store = new Vuex.Store({
 			for (let shop_id of payload) {
 				delete state.shopCart[shop_id]
 			}
+			uni.setStorage({
+				key: 'shopCart',
+				data: state.shopCart
+			})
 		},
 		// 购物车中食品数量变化
 		changeCount(state, payload) {
