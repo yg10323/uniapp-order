@@ -87,7 +87,10 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "外卖猫",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"scrollIndicator": "none" //全局 在APP页面都不显示滚动条
+		}
 	},
 	"tabBar": {
 		"selectedColor": "#DD524D",
