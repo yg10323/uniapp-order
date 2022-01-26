@@ -131,5 +131,41 @@ export default {
 		}
 
 		return foodInfoArray
+	},
+	/**
+	 * 合并相同订单(id在数据库经过排序)
+	 * @param {Object} orders 
+	 * @returns Object data
+	 */
+	dealOrderData(orders) {
+		let data = this.deepClone(orders);
+
+		let current_id, next_id;
+		let foodInfoArray = [];
+
+		for (let i = 0; i < data.length; i++) {
+			current_id = data[i].id;
+			// next_id为undefined表示数组只有一个元素或遍历到了最后一个元素
+			// 当遍历到最后一个元素的时候, 同样需要往foodInfoArray添加一次
+			if (data[i + 1]) {
+				next_id = data[i + 1].id;
+			} else {
+				foodInfoArray.push(data[i].food_info)
+				data[i].food_info = foodInfoArray
+				return data;
+			}
+			// 记录重复id的food_info
+			// 当id不相同时, 将foodInfoArray赋值给food_info
+			if (current_id === next_id) {
+				foodInfoArray.push(data[i].food_info)
+				data.splice(i, 1)
+				i = i - 1; //i减一为了保证下次遍历从当前下标开始
+			} else {
+				foodInfoArray.push(data[i].food_info)
+				data[i].food_info = foodInfoArray
+				foodInfoArray = [];
+			}
+
+		}
 	}
 }
