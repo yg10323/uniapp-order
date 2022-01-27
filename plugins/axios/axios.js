@@ -22,6 +22,10 @@ instance.interceptors.request.use(
 		// 发送请求时携带token
 		if (uni.getStorageSync('token')) {
 			reqObj.headers.Authorization = uni.getStorageSync('token')
+		} else {
+			uni.showToast({
+				title:'请登录'
+			})
 		}
 		return reqObj;
 	},
@@ -29,19 +33,19 @@ instance.interceptors.request.use(
 );
 
 instance.interceptors.response.use(
-    response => {
-        const res = response.data;
-        // 对响应数据做点什么
-        if (res.code !== 200) {
-            // 401 未认证
-            if (res.code === 401) {
-                localStorage.clear();
-                setTimeout(() => location.reload(), 1000)
-            }
-        }
-        return res;
-    },
-    err => Promise.reject(err)
+	response => {
+		const res = response.data;
+		// 对响应数据做点什么
+		if (res.code !== 200) {
+			// 401 未认证
+			if (res.code === 401) {
+				localStorage.clear();
+				// setTimeout(() => location.reload(), 1000)
+			}
+		}
+		return res;
+	},
+	err => Promise.reject(err)
 );
 
 Vue.prototype.$axios = instance

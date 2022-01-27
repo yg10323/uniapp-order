@@ -50,7 +50,7 @@ export default {
 		method: 'POST'
 	},
 	getOrder: {
-		name: '更新收货信息',
+		name: '获取个人订单信息',
 		url: '/buyer/order',
 		method: 'get'
 	},
