@@ -68,7 +68,7 @@
 					if (res.code === 200) {
 						this.orders = this.$utils.dealOrderData(res.data)
 					}
-					console.log(this.orders)
+					// console.log(this.orders)
 				})
 			}
 		}
