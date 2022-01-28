@@ -15,7 +15,7 @@
 				<view class="order-item" v-for="(item,index) in orders" :key="index">
 					<view class="shop" v-for="(shop,index) in item.food_info" :key="index">
 						<view class="shop-info">
-							<view class="shop-info-left">
+							<view class="shop-info-left" @click="toShopPage(shop.shop_id)">
 								<image :src="shop.data.shop_info.avatar_url" mode=""></image>
 								<text>{{shop.data.shop_info.name}}</text>
 							</view>
@@ -23,7 +23,7 @@
 								<text>{{item.done===1 ? '进行中' : '已完成'}}</text>
 							</view>
 						</view>
-						<view class="order-info">
+						<view class="order-info" @click="toOrderDetail">
 							<view class="foods" v-for="(food,index) in shop.data.food_data" :key="index">
 								<view class="food-avatar">
 									<image :src="food.avatar_url" mode=""></image>
@@ -38,7 +38,7 @@
 							<text>共{{shop.data.food_data.length}}件</text>
 						</view>
 					</view>
-					<view class="similar-shop">
+					<view class="similar-shop" @click="toOpList(item.shop_info.op_id)">
 						<text>相似商家</text>
 					</view>
 				</view>
@@ -54,7 +54,8 @@
 
 <script>
 	export default {
-		created() {
+		onShow() {
+			this.orders = ''
 			this.getOrder()
 		},
 		data() {
@@ -63,14 +64,38 @@
 			}
 		},
 		methods: {
+			// 请求订单数据
 			getOrder() {
 				this.$api.frontApis.getOrder().then(res => {
 					if (res.code === 200) {
 						this.orders = this.$utils.dealOrderData(res.data)
 					}
-					// console.log(this.orders)
+					console.log(this.orders)
 				})
-			}
+			},
+			// 跳转到店铺页面
+			toShopPage(shop_id){
+				this.$api.frontApis.getShopById({data:{shop_id}}).then(res=>{
+					if(res.code===200){
+						uni.navigateTo({
+							url:`/pages/shop/index?shopInfo=${encodeURIComponent(JSON.stringify(res.data))}`
+						})
+						// console.log(res)
+					}
+				})
+			},
+			// 跳转到op分类页面
+			toOpList(op_id){
+				uni.navigateTo({
+					url: `/pages/index/web/opList?op_id=${op_id}`
+				})
+			},
+			//跳转到订单详情页
+			toOrderDetail(){
+				uni.navigateTo({
+					url: `/pages/order/web/orderDetail`
+				})
+			},
 		}
 	}
 </script>
@@ -170,6 +195,7 @@
 	.shop-info-left {
 		display: flex;
 		align-items: center;
+
 		image {
 			width: 40px;
 			height: 40px;

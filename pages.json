@@ -81,6 +81,12 @@
 			"style": {
 				"navigationBarTitleText": "付款"
 			}
+		},
+		{
+			"path": "pages/order/web/orderDetail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
 		}
 	],
 	"globalStyle": {

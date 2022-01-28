@@ -19,6 +19,11 @@ export default {
 		url: '/front/shop/all',
 		method: 'GET',
 	},
+	getShopById: {
+		name: '根据店铺id获取店铺信息',
+		url: '/front/shop/by_id',
+		method: 'POST',
+	},
 	getShopFood: {
 		name: '获取店铺食品',
 		url: '/front/shop/food',
