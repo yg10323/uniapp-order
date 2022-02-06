@@ -125,10 +125,10 @@
 	export default {
 		onLoad: function(option) {
 			this.shopInfo = JSON.parse(decodeURIComponent(option.shopInfo));
-			// console.log(this.shopInfo)
 		},
 		created() {
 			this.orderData = this.shopCart[this.shopInfo.id];
+			// console.log(this.orderData)
 		},
 		computed: {
 			...mapState(["shopCart", "userInfo"]),
@@ -199,6 +199,7 @@
 						url: "/pages/profile/web/editAddress",
 					});
 				} else {
+					// console.log(this.orderData)
 					const food_ids = []
 					for (let item of this.orderData) {
 						food_ids.push(item.data.id)

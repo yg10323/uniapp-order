@@ -68,9 +68,9 @@
 			getOrder() {
 				this.$api.frontApis.getOrder().then(res => {
 					if (res.code === 200) {
-						this.orders = this.$utils.dealOrderData(res.data)
+						this.orders = this.$utils.dealOrderData(res.data).reverse()
 					}
-					console.log(this.orders)
+					// console.log(this.orders)
 				})
 			},
 			// 跳转到店铺页面

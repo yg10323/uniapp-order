@@ -87,6 +87,12 @@
 			"style": {
 				"navigationBarTitleText": "详情"
 			}
+		},
+		{
+			"path": "pages/order/web/cartOrder",
+			"style": {
+				"navigationBarTitleText": "购物车结算"
+			}
 		}
 	],
 	"globalStyle": {

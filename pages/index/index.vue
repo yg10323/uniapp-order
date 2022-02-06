@@ -10,6 +10,11 @@
 			<shop-classify :classifyList="classifyList"></shop-classify>
 			<shop-list :shopList="shopList"></shop-list>
 		</view>
+
+		<view class="shop-cart" @click="toCreateOrder">
+			<uni-icons class="cart" :class="JSON.stringify(cartEmpty)==='{}' ? '' : 'cart-active'" type="cart">
+			</uni-icons>
+		</view>
 	</view>
 </template>
 
@@ -18,16 +23,27 @@
 	import shopClassify from './web/shopClassify.vue'
 	import shopList from './web/shopList.vue'
 
+	import {
+		mapState
+	} from 'vuex'
+
 	export default {
 		components: {
 			navbar,
 			shopClassify,
 			shopList
 		},
+		onShow() {
+			this.cartEmpty = this.isCartEmpty()
+		},
+		computed: {
+			...mapState(['shopCart']),
+		},
 		data() {
 			return {
 				classifyList: [],
 				shopList: [],
+				cartEmpty: '',
 				// 扫码的数据
 				qrInfo: {},
 			};
@@ -37,6 +53,10 @@
 			this.getShopAll();
 		},
 		methods: {
+			// 判断购物车是否为空
+			isCartEmpty(){
+				return this.$utils.removeEmpty(this.shopCart)
+			},
 			// 店铺一级分类
 			getShopClassify() {
 				this.$api.frontApis.getShopClassify().then((res) => {
@@ -56,6 +76,16 @@
 						console.log("error_getShopAll");
 					}
 				});
+			},
+			// 购物车结算
+			toCreateOrder(){
+				const shop_ids = Object.keys(this.$utils.removeEmpty(this.shopCart))				
+				// 购物车有数据才结算
+				if (shop_ids.length) {
+					uni.navigateTo({
+						url: `/pages/order/web/cartOrder?shop_ids=${encodeURIComponent(JSON.stringify(shop_ids))}`
+					})
+				}
 			},
 			/**
 			 * 以下均为扫码登陆的方法
@@ -118,5 +148,19 @@
 </script>
 
 <style>
+	.shop-cart {
+		position: fixed;
+		right: 20px;
+		bottom: 70px;
+		z-index: 999;
+	}
 
+	.cart {
+		font-size: 50px !important;
+		color: #ccc !important;
+	}
+
+	.cart-active {
+		color: #ffbe11 !important;
+	}
 </style>
