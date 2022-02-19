@@ -93,6 +93,12 @@
 			"style": {
 				"navigationBarTitleText": "购物车结算"
 			}
+		},
+		{
+			"path": "pages/order/web/evaluate",
+			"style": {
+				"navigationBarTitleText": "订单评价"
+			}
 		}
 	],
 	"globalStyle": {

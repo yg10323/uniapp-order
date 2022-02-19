@@ -23,7 +23,7 @@
 								<text>{{item.done===1 ? '进行中' : '已完成'}}</text>
 							</view>
 						</view>
-						<view class="order-info" @click="toOrderDetail">
+						<view class="order-info" @click="toOrderDetail(item)">
 							<view class="foods" v-for="(food,index) in shop.data.food_data" :key="index">
 								<view class="food-avatar">
 									<image :src="food.avatar_url" mode=""></image>
@@ -38,8 +38,9 @@
 							<text>共{{shop.data.food_data.length}}件</text>
 						</view>
 					</view>
-					<view class="similar-shop" @click="toOpList(item.shop_info.op_id)">
-						<text>相似商家</text>
+					<view class="similar-shop">
+						<text class="evaluate" v-if="item.evaluate !== 0" @click="toEvaluate(item)">评价</text>
+						<text  @click="toOpList(item.shop_info.op_id)">相似商家</text>
 					</view>
 				</view>
 			</view>
@@ -91,11 +92,17 @@
 				})
 			},
 			//跳转到订单详情页
-			toOrderDetail(){
+			toOrderDetail(item){
 				uni.navigateTo({
-					url: `/pages/order/web/orderDetail`
+					url: `/pages/order/web/orderDetail?orderData=${JSON.stringify(item)}`
 				})
 			},
+			// 跳转评价页面
+			toEvaluate(item){
+				uni.navigateTo({
+					url: `/pages/order/web/evaluate?orderData=${JSON.stringify(item)}`
+				})
+			}
 		}
 	}
 </script>
@@ -147,7 +154,7 @@
 		display: flex;
 		justify-content: flex-end;
 	}
-
+	
 	.similar-shop text {
 		// position: relative;
 		right: 0;
@@ -155,6 +162,11 @@
 		padding: 5px;
 		border: 1px solid #d5d5d6;
 		border-radius: 5px;
+	}
+
+	.similar-shop .evaluate {
+		margin-right: 10px;
+		background-color: #ffbe11;
 	}
 
 	.order-item-wrap {

@@ -1,0 +1,16 @@
+{
+  "name": "uni-order",
+  "version": "1.0.0",
+  "description": "外卖点餐系统-uniapp",
+  "main": "main.js",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "axios-adapter-uniapp": "^0.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
