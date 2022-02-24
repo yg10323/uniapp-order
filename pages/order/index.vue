@@ -39,7 +39,7 @@
 						</view>
 					</view>
 					<view class="similar-shop">
-						<text class="evaluate" v-if="item.evaluate !== 0" @click="toEvaluate(item)">评价</text>
+						<text class="evaluate" v-if="item.evaluated === 0" @click="toEvaluate(item)">评价</text>
 						<text  @click="toOpList(item.shop_info.op_id)">相似商家</text>
 					</view>
 				</view>

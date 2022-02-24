@@ -1,5 +1,5 @@
 export default {
-	sendDeviceId:{
+	sendDeviceId: {
 		name: '扫码登陆时发送设备id',
 		url: '/seller/send_deviceid',
 		method: 'POST',
@@ -59,4 +59,24 @@ export default {
 		url: '/buyer/order',
 		method: 'get'
 	},
+	evaluate: {
+		name: '评价订单',
+		url: '/buyer/evaluate',
+		method: 'POST'
+	},
+	updateOrder: {
+		name: '更新订单',
+		url: '/buyer/update/order',
+		method: 'POST'
+	},
+	getEvaluates: {
+		name: '获取个人评价',
+		url: '/buyer/self/evaluate',
+		method: 'get'
+	},
+	deleteEvaluate: {
+		name: '删除个人评价',
+		url: '/buyer/delete/evaluate',
+		method: 'post'
+	}
 }
