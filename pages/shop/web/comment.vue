@@ -54,7 +54,7 @@
 		methods: {
 			// 获取评价数据
 			getShopEvaluates() {
-				this.$api.frontApis.getEvaluates({
+				this.$api.frontApis.getShopEvaluates({
 					data: {
 						shop_id: this.shop_id
 					}
