@@ -30,6 +30,10 @@
 						</view>
 					</view>
 				</view>
+				<view class="reply" v-if="item.evaluate_id !== null">
+					<text class="left-text">商家回复：</text>
+					<text class="right-text">{{item.reply}}</text>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -126,10 +130,6 @@
 		color: #98989d;
 	}
 
-	.evaluate-info {
-		margin-bottom: 30px;
-	}
-
 	.other-info {
 		display: flex;
 	}
@@ -155,5 +155,16 @@
 		padding: 5px;
 		font-size: 14px;
 		background-color: #f6f6f6;
+	}
+	
+	.reply {
+		padding: 5px;
+		margin-top: 10px;
+		font-size: 14px;
+		background-color: #f6f6f6;
+	}
+	
+	.left-text {
+		color: #ffa04e;
 	}
 </style>
