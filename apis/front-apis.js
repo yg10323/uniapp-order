@@ -78,5 +78,10 @@ export default {
 		name: '删除个人评价',
 		url: '/buyer/delete/evaluate',
 		method: 'post'
+	},
+	getShopEvaluates: {
+		name: '获取店铺评价',
+		url: '/shop/evaluates',
+		method: 'post'
 	}
 }

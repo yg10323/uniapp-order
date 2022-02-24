@@ -33,10 +33,7 @@
 					<food-list :shop_id="shopInfo.id"></food-list>
 				</view>
 				<view v-show="current === 1">
-					选项卡2的内容
-				</view>
-				<view v-show="current === 2">
-					选项卡3的内容
+					<comment :shop_id="shopInfo.id"></comment>
 				</view>
 			</view>
 		</view>
