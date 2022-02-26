@@ -65,7 +65,7 @@
 				}).then(res => {
 					if (res.code === 200) {
 						this.evaluates = this.$utils.dealOrderData(res.data).reverse()
-						console.log(this.evaluates)
+						// console.log(this.evaluates)
 					}
 				})
 			},
