@@ -1,5 +1,5 @@
 # uniapp-order
-外卖点餐系统-uniapp, 
+外卖点餐系统-uniapp, 对应的后台管理系统: [vue-cms](https://github.com/yg10323/vue-cms) 和 后端接口: [koa-apis](https://github.com/yg10323/koa-apis)
 
 ## 安装依赖
 ```
